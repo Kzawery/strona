@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+
+<h3>Zadanie</h3><br>
+Oblicz objętośc ostrosłupa prawidłowego o wysokości H i boku a <br>
+
+
+<h4>Dane Wejściowe</h4>
+<label for="h">H = </label>
+<input type="text" id="h" name="h" ><br><br>
+<label for="a"> a = </label>
+<input type="text" id="a" name="a"><br>
+
+<body>
+
+<h3>Rysunek</h3>
+
+ <svg height="300" width="500">
+ 
+ 	<text x="50" y="265" fill="black" id="bok">a</text>    
+    <text x="200" y="235" fill="black" id="bok1">a</text>
+    
+    <text x="100" y="135" fill="red" id="wysokosc">H</text>
+    
+ 	<line x1="30" y1="210" x2="130" y2="300" style="stroke:black;stroke-width:2" />
+    <line x1="130" y1="300" x2="240" y2="150" style="stroke:black;stroke-width:2" />
+    <line x1="240" y1="150" x2="30" y2="210" style="stroke:black;stroke-width:2" />
+    
+    <line x1="130" y1="40" x2="120" y2="230" style="stroke:red;stroke-width:2" />
+   
+   <line x1="130" y1="40" x2="240" y2="150" style="stroke:black;stroke-width:2" />
+   <line x1="130" y1="40" x2="30" y2="210" style="stroke:black;stroke-width:2" />
+   <line x1="130" y1="40" x2="130" y2="300" style="stroke:black;stroke-width:2" />
+    
+</svg> 
+
+<div> </div>
+<h3>Rozwiazanie</h3>
+
+<math xmlns="http://www.w3.org/1998/Math/MathML">
+ <mi>V</mi><mo>= </mo>
+ <mfrac>
+   <mrow>
+      <msup><mi>a</mi><mn>2</mn></msup>
+      <mo> H </mo>
+      <msqrt>
+         <mn> 3 </mn>
+      </msqrt>
+   </mrow>
+   <mn> 12 </mn>
+</mfrac>
+<mo>= </mo>
+      <mfrac>
+     <mrow>
+        <msup><mi id="wzora">a</mi><mn>2</mn></msup>
+        <mo id="wzorh"> H </mo>
+        <msqrt>
+           <mn> 3 </mn>
+        </msqrt>
+     </mrow>
+     <mn> 12 </mn>
+  </mfrac>
+  <mo>= </mo>
+	
+    <mi id ="result"/>
+    </math>
+ 
+ 
+ <script type="text/javascript">
+    var a = 1;
+    var h = 1;
+    
+    const result = document.getElementById("result");
+    const height = document.getElementById("h");
+    const side = document.getElementById("a");
+    const rheight = document.getElementById("wzorh");
+    const hh = document.getElementById("wysokosc");
+    
+    const hinputHandler = function (e) {
+        result.innerHTML = e.target.value;
+        rheight.innerHTML = e.target.value;
+        hh.innerHTML = e.target.value;
+        h = e.target.value;
+        result.innerHTML = Math.round(a**2 * h * Math.sqrt(3)) / 12;
+    }
+    height.addEventListener('input', hinputHandler);
+    height.addEventListener('propertychange', hinputHandler);
+
+    const rsource = document.getElementById("a");
+    const rresult = document.getElementById("bok");
+    const rresult1 = document.getElementById("bok1");
+    
+    const rmresult = document.getElementById("wzora");
+    const rsresult = document.getElementById("result")
+
+    const rinputHandler = function (e) {
+        rresult.innerHTML = e.target.value;
+        rresult1.innerHTML = e.target.value;
+        rmresult.innerHTML = e.target.value;
+        rsresult.innerHTML = e.target.value **2;
+        a = e.target.value;
+        result.innerHTML = Math.round(a**2 * h * Math.sqrt(3) ) / 12;
+
+    }
+    rsource.addEventListener('input', rinputHandler);
+    rsource.addEventListener('propertychange', rinputHandler);
+    
+</script>
+ 
+
+ 
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</html>
