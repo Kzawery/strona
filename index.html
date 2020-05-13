@@ -1,13 +1,7 @@
-<!DOCTYPE html>
+
 <html>
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-
-</head>
-
-<h3>Zadanie</h3><br>
-Oblicz objętośc ostrosłupa prawidłowego o wysokości H i boku a <br>
+<h4>Zadanie</h4><br>
+Oblicz objętośc ostrosłupa prawidłowego trójkątnego o wysokości H i boku a <br>
 
 
 <h4>Dane Wejściowe</h4>
@@ -42,7 +36,7 @@ Oblicz objętośc ostrosłupa prawidłowego o wysokości H i boku a <br>
 <div> </div>
 <h3>Rozwiazanie</h3>
 
-<math xmlns="http://www.w3.org/1998/Math/MathML">
+ <math xmlns="http://www.w3.org/1998/Math/MathML">
  <mi>V</mi><mo>= </mo>
  <mfrac>
    <mrow>
@@ -79,7 +73,12 @@ Oblicz objętośc ostrosłupa prawidłowego o wysokości H i boku a <br>
     const height = document.getElementById("h");
     const side = document.getElementById("a");
     const rheight = document.getElementById("wzorh");
+    const rside = document.getElementById("wzora");
     const hh = document.getElementById("wysokosc");
+    
+    const bok = document.getElementById("bok");
+    const bok1 = document.getElementById("bok1");
+    
     
     const hinputHandler = function (e) {
         result.innerHTML = e.target.value;
@@ -91,24 +90,16 @@ Oblicz objętośc ostrosłupa prawidłowego o wysokości H i boku a <br>
     height.addEventListener('input', hinputHandler);
     height.addEventListener('propertychange', hinputHandler);
 
-    const rsource = document.getElementById("a");
-    const rresult = document.getElementById("bok");
-    const rresult1 = document.getElementById("bok1");
-    
-    const rmresult = document.getElementById("wzora");
-    const rsresult = document.getElementById("result")
-
     const rinputHandler = function (e) {
-        rresult.innerHTML = e.target.value;
-        rresult1.innerHTML = e.target.value;
-        rmresult.innerHTML = e.target.value;
-        rsresult.innerHTML = e.target.value **2;
+        bok.innerHTML = e.target.value;
+        bok1.innerHTML = e.target.value;
+        rside.innerHTML = e.target.value;
         a = e.target.value;
         result.innerHTML = Math.round(a**2 * h * Math.sqrt(3) ) / 12;
 
     }
-    rsource.addEventListener('input', rinputHandler);
-    rsource.addEventListener('propertychange', rinputHandler);
+    side.addEventListener('input', rinputHandler);
+    side.addEventListener('propertychange', rinputHandler);
     
 </script>
  
@@ -118,19 +109,3 @@ Oblicz objętośc ostrosłupa prawidłowego o wysokości H i boku a <br>
 
 </html>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-</html>
